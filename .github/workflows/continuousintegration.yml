@@ -19,6 +19,7 @@ jobs:
         with:
             linter: pylint
 
+
   docker:
     runs-on: ubuntu-latest
     needs: build
@@ -35,7 +36,8 @@ jobs:
         - name: Build and push
           uses: docker/build-push-action@v6
           with:
-            context: docker/ # Caminho para o Dockerfile
-            file: docker/Dockerfile
+            context: .  # Define o diretório raiz como contexto
+            file: ./Dockerfile  # Caminho para o Dockerfile na raiz
             push: false
             tags: user/app:latest
+            
