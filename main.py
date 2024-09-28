@@ -7,7 +7,7 @@ app = FastAPI()
 async def root():
     return {"message": "Hello Word"}
 
-@app.get("/funcaoteste1")
+@app.get("/funcaoteste")
 async def funcaoteste():
     return {"teste": "deu certo"}
 
