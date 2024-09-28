@@ -13,4 +13,4 @@ async def funcaoteste():
 
 @app.get("/funcaoteste2")
 async def funcaoteste2():
-    return {"teste": True, "num_aleatorio": random.randint(0,1000)}
+    return {"teste": True, "num_aleatorio": random.randint(0,2000)}
