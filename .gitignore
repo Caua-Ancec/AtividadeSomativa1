@@ -1,3 +1,4 @@
 # Ignorar o diretório __pycache__ e arquivos .pyc
 __pycache__/
 *.pyc
+.venv/
