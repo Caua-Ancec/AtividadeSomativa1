@@ -5,7 +5,7 @@ on:
             - main
 
 jobs:
-  biuld:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
