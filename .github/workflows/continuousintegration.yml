@@ -39,7 +39,7 @@ jobs:
             context: .  # Define o diretório raiz como contexto
             file: ./Dockerfile  # Caminho para o Dockerfile na raiz
             push: false
-            tags: user/app:latest
+
 
   testes:
     runs-on: ubuntu-latest
