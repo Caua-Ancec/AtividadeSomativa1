@@ -1,6 +1,5 @@
 from src.main import *
 from unittest.mock import patch
-
 import pytest
 
 @pytest.mark.asyncio
@@ -10,14 +9,13 @@ async def test_root():
 
 @pytest.mark.asyncio
 async def test_funcaoteste():
-    result = await root()
+    result = await root()  
     assert result == {"teste": "deu certo"}
 
 @pytest.mark.asyncio
 async def test_funcaoteste2():
     with patch('random.randint', return_value=12345):
-        result = await funcaoteste
-
+        result = await funcaoteste()  
     assert result == {"teste": True, "num_aleatorio": 12345}
 
 @pytest.mark.asyncio
@@ -26,13 +24,11 @@ async def test_create_estudante():
     result = await create_estudante(estudante_teste)
     assert estudante_teste == result
 
-@pytest.mark.asyncio
 async def update_estudante(id_estudante):
     if id_estudante > 0:
         return True  
     return False  
 
-@pytest.mark.asyncio
 async def delete_estudante(id_estudante):
     if id_estudante > 0:
         return True  
