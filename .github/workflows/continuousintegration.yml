@@ -40,14 +40,3 @@ jobs:
             file: ./Dockerfile  # Caminho para o Dockerfile na raiz
             push: false
             tags: user/app:latest
-
-  discord:
-    runs-on: ubuntu latest
-    steps:
-
-    - uses: actions/checkout@v2
-
-    - name: Run Discord Webhook
-      uses: Sniddl/discord-commits@v1.6
-      with:
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
