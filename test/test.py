@@ -2,27 +2,20 @@ from src.main import *
 from unittest.mock import patch
 
 def test_root():
-    result = root()
-    yield result
-    assert result == {"message": "Hello Word"}
+    assert root() == {"message": "Hello Word"}
 
-def teste_funcaoteste():
-    result = root()
-    yield result
-    assert result == {"teste": "deu certo"}
+def test_funcaoteste():
+    assert root() == {"teste": "deu certo"}
 
-def teste_funcaoteste2():
-    with patch('random.randint', return_value=12345:)
-        result = funcaoteste
-        yield result
-
-    assert result() == {"teste": True, "num_aleatorio": 12345}
+def test_funcaoteste2():
+    with patch('random.randint', return_value=12345):
+        result = funcaoteste()  # Certifique-se de que isso chama a função
+    assert result == {"teste": True, "num_aleatorio": 12345}  # Não precisa de parênteses aqui
 
 def test_create_estudante():
     estudante_teste = Estudante(name="Fulano", curso="Curso 1", ativo=False)
     result = create_estudante(estudante_teste)
-    yield result
-    assert estudante_teste == result
+    assert estudante_teste == result  # Verifica se o estudante foi criado corretamente
 
 def update_estudante(id_estudante):
     if id_estudante > 0:
@@ -35,21 +28,13 @@ def delete_estudante(id_estudante):
     return False  
 
 def test_update_estudante_negativo():
-    result = update_estudante(-5)
-    yield result
-    assert not result
+    assert not update_estudante(-5)  
 
 def test_update_estudante_positivo():
-    result = update_estudante(10)
-    yield result
-    assert result
+    assert update_estudante(10)  
 
 def test_delete_estudante_negativo():
-    result = delete_estudante(-5)
-    yield result
-    assert not result
+    assert not delete_estudante(-5)  
 
 def test_delete_estudante_positivo():
-    result = delete_estudante(5)
-    yield result
-    assert result
+    assert delete_estudante(5)
