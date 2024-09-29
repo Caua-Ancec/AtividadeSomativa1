@@ -9,14 +9,14 @@ async def test_root():
 
 @pytest.mark.asyncio
 async def test_funcaoteste():
-    result = await funcaoteste() 
-    assert result == {"teste": "deu certo", "num_aleatorio": result["num_aleatorio"]}  
+    result = await funcaoteste()  # Chamando a função correta
+    assert result == {"teste": "deu certo"}
 
 @pytest.mark.asyncio
 async def test_funcaoteste2():
     with patch('random.randint', return_value=12345):
-        result = await funcaoteste()  
-    assert result == {"teste": "deu certo", "num_aleatorio": 12345}
+        result = await funcaoteste2()  
+    assert result == {"teste": True, "num_aleatorio": 12345}
 
 @pytest.mark.asyncio
 async def test_create_estudante():
@@ -25,14 +25,10 @@ async def test_create_estudante():
     assert estudante_teste == result
 
 async def update_estudante(id_estudante):
-    if id_estudante > 0:
-        return True  
-    return False  
+    return id_estudante > 0 
 
 async def delete_estudante(id_estudante):
-    if id_estudante > 0:
-        return True  
-    return False  
+    return id_estudante > 0  
 
 @pytest.mark.asyncio
 async def test_update_estudante_negativo():
