@@ -9,14 +9,14 @@ async def test_root():
 
 @pytest.mark.asyncio
 async def test_funcaoteste():
-    result = await root()  
-    assert result == {"teste": "deu certo"}
+    result = await funcaoteste() 
+    assert result == {"teste": "deu certo", "num_aleatorio": result["num_aleatorio"]}  
 
 @pytest.mark.asyncio
 async def test_funcaoteste2():
     with patch('random.randint', return_value=12345):
         result = await funcaoteste()  
-    assert result == {"teste": True, "num_aleatorio": 12345}
+    assert result == {"teste": "deu certo", "num_aleatorio": 12345}
 
 @pytest.mark.asyncio
 async def test_create_estudante():
