@@ -67,4 +67,36 @@ async def test_estudante_ativo():
 async def test_estudante_inativo():
     estudante_teste = Estudante(name="Cauã", curso="Curso 10", ativo=False)
     result = await create_estudante(estudante_teste)
-    assert result.ativo is False            
+    assert result.ativo is False
+
+@pytest.mark.asyncio
+async def test_resto_positivo():
+    resultado = 10 % 3
+    assert resultado == 1  
+
+@pytest.mark.asyncio
+async def test_resto_zero():
+    resultado = 9 % 3
+    assert resultado == 0  
+
+@pytest.mark.asyncio
+async def test_resto_negativo():
+    resultado = -10 % 3
+    assert resultado == 2  
+
+@pytest.mark.asyncio
+async def test_lista_vazia():
+    lista = []
+    assert len(lista) == 0
+
+@pytest.mark.asyncio
+async def test_adicionar_item_lista():
+    lista = []
+    lista.append(1)
+    assert len(lista) == 1
+
+@pytest.mark.asyncio
+async def test_remover_item_lista():
+    lista = [1, 2, 3]
+    lista.remove(2)
+    assert len(lista) == 2            
